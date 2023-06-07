@@ -4,7 +4,7 @@ import { POKEMONS } from './mock-pokemon-list'
 
 @Component({
   selector: 'app-root', // nom du composant personnalisé 
-  template: `<h1>Liste de Pokémons</h1>`
+  templateUrl: "app.component.html"
 })
 
 export class AppComponent implements OnInit {
