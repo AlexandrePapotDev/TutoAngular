@@ -9,14 +9,22 @@ import { POKEMONS } from './mock-pokemon-list'
 
 export class AppComponent implements OnInit {
   pokemonList: Pokemon[] = POKEMONS
+  pokemonSelected: Pokemon|undefined
 
   ngOnInit(): void {
     console.table(this.pokemonList)
   }
 
-  selectPokemon(event: MouseEvent){
-    const index: number = +(event.target as HTMLInputElement).value // + pour forcer le cast en number
-    console.log(`Vous avez cliqué sur le pokemon ${this.pokemonList[index].name}`)
+  selectPokemon(pokemonId: string){
+    const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
+    if(pokemon){
+      console.log(`Vous avez demandé le pokemon ${pokemon.name}`)
+      this.pokemonSelected = pokemon
+    }
+    else{
+      console.log(`Vous avez demandé un Pokemon qui n'existe pas`)
+      this.pokemonSelected = pokemon      
+    }
   }
 
 }
