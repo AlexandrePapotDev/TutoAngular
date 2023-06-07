@@ -13,6 +13,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent] // Lancement du premier composant
+  bootstrap: [AppComponent] // Composant racine 
 })
 export class AppModule { }

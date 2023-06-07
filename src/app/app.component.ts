@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root', // nom du composant personalisé 
-  template: `<h1>Welcome to {{title}}!</h1>`
+  selector: 'app-root', // nom du composant personnalisé 
+  template: `<h1>Welcome to {{ pokemons[1] }}!</h1>`
 })
 export class AppComponent {
-  title = 'ng-pokemon-app';
+  pokemons = ['Bulbizarre,','Salameche','Carapuce']
 }
+
+
